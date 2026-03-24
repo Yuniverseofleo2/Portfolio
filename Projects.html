@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projects | Yuniverse</title>
+    <link rel="icon" href="weblogo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #020111 url('ProjectsBG.png') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            color: #FFFFFF;
+            opacity: 0; 
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%; 
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 50px;
+            box-sizing: border-box;
+            background: transparent;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 30px;
+            transition: 0.3s;
+        }
+        .navbar a:hover { color: #ADD8E6; text-shadow: 0 0 10px #ADD8E6; }
+
+        /* HEADER SECTION */
+        .projects-header {
+            padding: 150px 20px 60px;
+            text-align: center;
+        }
+        .main-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin: 10px 0;
+            background: linear-gradient(to right, #f3fcff, #ADD8E6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* PROJECT GRID */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(173, 216, 230, 0.1);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #ADD8E6;
+            background: rgba(255, 255, 255, 0.07);
+        }
+        
+        .card-image-box {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background: rgba(0,0,0,0.2);
+        }
+        .card-image-box img, 
+        .card-image-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .year-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(2, 1, 17, 0.7);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: #ADD8E6;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .card-info { padding: 15px 20px; text-align: center; }
+        .card-info h3 { margin: 0; color: #FFFFFF; font-size: 1.1rem; letter-spacing: 1px; }
+
+        /* RE-ANIMATING FADE IN */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer { text-align: center; padding: 40px; color: #ffffff; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
+    <header class="projects-header">
+        <h1 class="main-title fade-in">Projects</h1>
+    </header>
+
+    <section class="project-grid">
+        
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <video autoplay muted loop playsinline><source src="Game.mp4" type="video/mp4"></video>
+            </div>
+            <div class="card-info"><h3>GAME: Erebros Pâtisserie</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <video autoplay muted loop playsinline><source src="Finaldialogue.mp4" type="video/mp4"></video>
+            </div>
+            <div class="card-info"><h3>UI: Dialogue System</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <video autoplay muted loop playsinline><source src="Sketch Animation.mp4" type="video/mp4"></video>
+            </div>
+            <div class="card-info"><h3>ANIMATION: Libro ni Lola Opening Sketch</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <img src="Hiran.jpg" alt="Character">
+            </div>
+            <div class="card-info"><h3>CHARACTER: Hiran Maharlika</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <img src="Hiraya2.jpg" alt="Character">
+            </div>
+            <div class="card-info"><h3>CHARACTER: Hiraya Maharlika</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <img src="Hiraya and Hiran.png" alt="Character">
+            </div>
+            <div class="card-info"><h3>CHARACTER: Hiran and Hiraya</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2023</span>
+                <img src="Menu.jpg" alt="Background">
+            </div>
+            <div class="card-info"><h3>ENVIRONMENT: Forest</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2023</span>
+                <img src="Card.jpg" alt="Background">
+            </div>
+            <div class="card-info"><h3>ENVIRONMENT: Open Field</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <img src="MC.png" alt="Asset">
+            </div>
+            <div class="card-info"><h3>CHARACTER ASSET: Pixel Asset for Player
+                 (Erebros Pâtisserie)</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <img src="Building Asset.png" alt="Asset">
+            </div>
+            <div class="card-info"><h3>ASSET: Buildings for (Erebros Pâtisserie)</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <img src="The mimic.png" alt="Asset">
+            </div>
+            <div class="card-info"><h3>CHARACTER ASSET:The Mimic (STBY)</h3></div>
+        </div>
+
+        <div class="project-card fade-in">
+            <div class="card-image-box">
+                <span class="year-badge">2024</span>
+                <img src="The listener.png" alt="Asset">
+            </div>
+            <div class="card-info"><h3>CHARACTER ASSET: The Listener</h3></div>
+        </div>
+
+    </section>
+
+    <footer>© 2026 YUNIVERSE</footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.body.style.transition = 'opacity 0.5s ease';
+            document.body.style.opacity = '1';
+        });
+
+        const faders = document.querySelectorAll('.fade-in');
+        
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px" 
+        };
+
+        const appearOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target.querySelector('video');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (video) video.play();
+                } else {
+                    entry.target.classList.remove('visible');
+                    if (video) video.pause();
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>

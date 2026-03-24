@@ -1,0 +1,202 @@
+<html lang="en">
+<head>
+    <title>Contact - Yuniverse</title>
+    <link rel="icon" href="weblogo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('ContactBG.png') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #FFFFFF;
+            opacity: 0; 
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%; 
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+            padding: 20px 50px;
+            box-sizing: border-box;
+            background: transparent;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .navbar a:hover { color: #B6D0E2; text-shadow: 0 0 10px #B6D0E2; }
+
+        /* CONTACT LAYOUT */
+        .hero-section {
+            padding: 150px 20px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .contact-container {
+            max-width: 600px; /* Narrower for a single column */
+            width: 100%;
+            text-align: center;
+        }
+
+        .header-text h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #95e6ff, #6db0fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-text p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* SOCIAL LINKS */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .info-card {
+            background: rgba(10, 10, 35, 0.4);
+            backdrop-filter: blur(8px);
+            padding: 18px 25px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: 0.3s ease;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(173, 216, 230, 0.15);
+            text-align: left;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #ADD8E6;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(109, 176, 253, 0.2);
+        }
+
+        .icon-box {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+        }
+
+        .email-icon { background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%); }
+        .linkedin-icon { background: #0077b5; }
+        .github-icon { background: #333; }
+        .twitter-icon { background: #1da1f2; }
+
+        .info-text h4 { margin: 0; color: #ADD8E6; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+        .info-text p { margin: 3px 0 0; font-weight: bold; font-size: 1rem; }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        footer { text-align: center; padding: 40px; color: #aaa; font-size: 0.9rem; margin-top: auto; }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
+    <section class="hero-section">
+        <div class="contact-container">
+            
+            <div class="header-text fade-in">
+                <h1>Connect With Me</h1>
+                <p>Whether you have a project in mind, want to collaborate, or just want to say hi, I'd love to hear from you!</p>
+            </div>
+
+            <div class="contact-info">
+                <a href="yuniverseofleo22@gmail.com" class="info-card fade-in">
+                    <div class="icon-box email-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p>yuniverseofleo22@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Yuniverseofleo2" class="info-card fade-in">
+                    <div class="icon-box github-icon"><i class="fab fa-github"></i></div>
+                    <div class="info-text">
+                        <h4>GitHub</h4>
+                        <p>github.com/Yuniverseofleo2</p>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/yuniverseofleo/" class="info-card fade-in">
+                    <div class="icon-box twitter-icon"><i class="fab fa-instagram"></i></div>
+                    <div class="info-text">
+                        <h4>Instagram</h4>
+                        <p>@yuniverseofleo</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2026 Yuniverse</footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 50);
+        });
+
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1 };
+        const appearOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+</body>
+</html>

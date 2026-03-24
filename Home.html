@@ -1,0 +1,324 @@
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="icon" href="weblogo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('HOME BG.png') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #FFFFFF;
+            opacity: 0; 
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%; 
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+            padding: 20px 50px;
+            box-sizing: border-box;
+            background: transparent;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .navbar a:hover { color: #B6D0E2; text-shadow: 0 0 10px #B6D0E2; }
+
+        /* HERO HEADER */
+        .hero-section {
+            padding: 150px 20px 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 300px;
+            flex-wrap: wrap;
+        }
+        .welcome-text {
+            font-size: clamp(3rem, 10vw, 6rem);
+            margin: 0;
+            background: linear-gradient(to right, #95e6ff, #6db0fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-header img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .artist-tag {
+            font-weight: bold;
+            letter-spacing: 2px;
+            color:#CCCCFF;
+            display: block;
+            font-size: 1.2rem;
+        }
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color:#F0FFFF;
+            max-width: 700px;
+            margin: 0 auto 300px auto; 
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* PROJECT ROWS (zig-zag layout) */
+        .project-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1100px;
+            width: 100%;
+            margin: 40px auto;
+            text-align: left;
+            flex-wrap: wrap;
+        }
+        .project-row.reverse { flex-direction: row-reverse; text-align: right; }
+
+        .work-display {
+            flex: 1;
+            max-width: 550px;
+            background: rgba(0,0,0,0.5);
+            border: 2px solid #ADD8E6;
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 0 15px rgba(156, 77, 204, 0.3);
+        }
+        .work-display video, .work-display img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .work-info {
+            flex: 1;
+        }
+        .work-info h3 {
+            color: #ADD8E6;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .work-info p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ffffff;
+        }
+
+        /* CAROUSEL */
+        .centered-project {
+            text-align: center;
+            margin: 60px auto;
+            max-width: 800px;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        footer { text-align: center; padding: 40px; color: #aaa; font-size: 0.9rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .project-row, .project-row.reverse { flex-direction: column; text-align: center; }
+            .work-display, .work-info { max-width: 90%; }
+        }
+        @media (max-width: 480px) {
+            .hero-section { padding: 120px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="AboutMe.html">About Me</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-header">
+            <h1 class="welcome-text fade-in">Welcome!</h1>
+            <img src="Logo.png" alt="Logo" class="fade-in">
+        </div>
+
+        <!-- HELLO + intro -->
+        <div class="artist-tag fade-in"> HELLO </div>
+        <p class="intro-text fade-in">
+            I’m Yuni, a game development student and background artist, creating environments and visuals for games and animated projects.
+        </p>
+
+        <div class="artist-tag fade-in">✦ BEST WORKS ✦</div>
+
+        <!-- GAME -->
+        <div class="project-row fade-in">
+            <div class="work-display">
+                <video src="Marigold Paradise.mp4" muted loop playsinline poster="game_poster.jpg"></video>
+            </div>
+            <div class="work-info fade-in">
+                <h3>Marigold Paradise – Educational Game Concept</h3>
+                <p>A fun, interactive game designed for children to learn basic money management 
+                    and financial literacy while engaging with playful challenges and rewards.</p>
+            </div>
+        </div>
+
+        <!-- ANIMATION -->
+        <div class="project-row reverse fade-in">
+            <div class="work-display">
+                <video src="Midterms.mp4" muted loop playsinline poster="animation_poster.jpg"></video>
+            </div>
+            <div class="work-info fade-in">
+                <h3>Libro ni Lola – Character Rigging & Animation</h3>
+                <p>Rigged and prepared characters for our animated film,
+                     ensuring smooth movement and expressive performances for storytelling.</p>
+            </div>
+        </div>
+
+        <!-- CHARACTER DESIGN -->
+        <div class="project-row fade-in">
+            <div class="work-display">
+                <img src="Hiraya.png" alt="Character Design">
+            </div>
+            <div class="work-info fade-in">
+                <h3>Character & Game Design – Philippine Culture & Mythology</h3>
+                <p>Created character designs inspired by traditional Philippine culture,
+                     integrating authentic elements of folklore and mythology into
+                    both character visuals and the game world. Developed concepts for Libro ni Lola,
+                    a game that immerses players in a Philippine mythological themes while promoting
+                    exploration and narrative engagement.</p>
+            </div>
+        </div>
+
+        <!-- BACKGROUND CAROUSEL -->
+        <div class="centered-project fade-in">
+            <h3>Backgrounds</h3>
+            <div class="work-display">
+                <div class="carousel" id="carousel-bg">
+                    <div class="carousel-track">
+                        <img src="Apolaki vs Hiraya.png" alt="BG1">
+                        <img src="Field.jpg" alt="BG2">
+                        <img src="ShootingStar.png" alt="BG3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>© 2026 Yuniverse</footer>
+
+    <script>
+        // Page fade-in on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 50);
+        });
+
+        // Page fade-out transition for navbar links
+        const links = document.querySelectorAll('.navbar a');
+        links.forEach(link => {
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '0';
+                setTimeout(() => { window.location.href = href; }, 500);
+            });
+        });
+
+        // Automatic horizontal carousel
+        function startCarousel(carouselId, interval=3000){
+            const carousel = document.getElementById(carouselId);
+            const track = carousel.querySelector('.carousel-track');
+            const slides = track.children;
+            let index = 0;
+            setInterval(() => {
+                index = (index + 1) % slides.length;
+                track.style.transform = `translateX(-${index*100}%)`;
+            }, interval);
+        }
+        startCarousel('carousel-bg', 3000);
+
+        // Autoplay muted videos when visible on screen
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => video.muted = true);
+        const observerOptions = { threshold: 0.5 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.play();
+                } else {
+                    entry.target.pause();
+                }
+            });
+        }, observerOptions);
+        videos.forEach(video => observer.observe(video));
+
+        // Scroll fade-in animation (repeats every scroll)
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2 };
+        const appearOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+
+</body>
+</html>
