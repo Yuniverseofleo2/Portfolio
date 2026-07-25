@@ -183,7 +183,6 @@
 
     .cs-icon-pink { background: linear-gradient(135deg, #ff758c, #ff7eb3); }
     .cs-icon-dark { background: #24292e; border: 1px solid rgba(255, 255, 255, 0.1); }
-    .cs-icon-blue { background: linear-gradient(135deg, #00b4db, #0083b0); }
 
     .cs-text-box {
       display: flex;
@@ -298,7 +297,8 @@
         <h3>Space Shooter</h3>
       </div>
     </div>
-     <div class="project-card fade-in" data-category="tech">
+
+    <div class="project-card fade-in" data-category="tech">
       <div class="card-image-box">
         <span class="year-badge">2026</span>
         <video autoplay muted loop playsinline>
@@ -306,7 +306,7 @@
         </video>
       </div>
       <div class="card-info">
-        <h3>Space Shooter</h3>
+        <h3>Lakapati</h3>
       </div>
     </div>
 
@@ -329,7 +329,7 @@
         
         <div class="cs-row highlighted">
           <div class="cs-icon-box cs-icon-pink">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 12zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 12zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
           </div>
           <div class="cs-text-box">
             <span class="cs-label">ROLE</span>
@@ -350,11 +350,11 @@
       </div>
     </div>
 
-    <!-- Graphics Design Placeholder (Replace image source as needed) -->
+    <!-- Graphics Design Projects -->
     <div class="project-card fade-in" data-category="graphics">
       <div class="card-image-box">
         <span class="year-badge">2026</span>
-        <img src="1.png" alt="Graphic Design Project">
+        <img src="1.png" alt="His Collection">
       </div>
       <div class="card-info">
         <h3>His Collection</h3>
@@ -364,43 +364,42 @@
     <div class="project-card fade-in" data-category="graphics">
       <div class="card-image-box">
         <span class="year-badge">2026</span>
-        <img src="2.png" alt="Graphic Design Project">
+        <img src="2.png" alt="Crimson Dawn">
       </div>
       <div class="card-info">
         <h3>Crimson Dawn</h3>
       </div>
     </div>
 
-<div class="project-card fade-in" data-category="graphics">
+    <div class="project-card fade-in" data-category="graphics">
       <div class="card-image-box">
         <span class="year-badge">2026</span>
-        <img src="3.png" alt="Graphic Design Project">
+        <img src="3.png" alt="Sea of Peace">
       </div>
       <div class="card-info">
         <h3>Sea of Peace</h3>
       </div>
     </div>
 
-<div class="project-card fade-in" data-category="graphics">
+    <div class="project-card fade-in" data-category="graphics">
       <div class="card-image-box">
         <span class="year-badge">2026</span>
-        <img src="4.png" alt="Graphic Design Project">
+        <img src="4.png" alt="Booth Pubmat">
       </div>
       <div class="card-info">
         <h3>Booth Pubmat</h3>
       </div>
     </div>
 
-<div class="project-card fade-in" data-category="graphics">
+    <div class="project-card fade-in" data-category="graphics">
       <div class="card-image-box">
         <span class="year-badge">2026</span>
-        <img src="5.png" alt="Graphic Design Project">
+        <img src="5.png" alt="Booth Pubmat">
       </div>
       <div class="card-info">
         <h3>Booth Pubmat</h3>
       </div>
     </div>
-
 
     <!-- Character Design Projects -->
     <div class="project-card fade-in" data-category="character">
@@ -477,7 +476,6 @@
   <footer>© 2026 YUNIVERSE</footer>
 
   <script>
-    // Intersection Observer for fade-in animations
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -488,17 +486,14 @@
     
     document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 
-    // Filter project selection logic
     const buttons = document.querySelectorAll(".filter-btn");
     const cards = document.querySelectorAll(".project-card");
 
     buttons.forEach(btn => {
       btn.onclick = () => {
-        // Toggle Active Button state
         buttons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
 
-        // Filter cards
         const filterValue = btn.dataset.filter;
         cards.forEach(card => {
           const isMatch = filterValue === "all" || card.dataset.category === filterValue;
